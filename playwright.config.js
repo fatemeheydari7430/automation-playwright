@@ -1,5 +1,8 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
+import {
+  defineConfig,
+  devices
+} from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -34,21 +37,22 @@ export default defineConfig({
   },
 
   /* Configure projects for major browsers */
-  projects: [
-    {
+  projects: [{
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome']
+      },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
@@ -67,7 +71,10 @@ export default defineConfig({
     // },
     // {
     //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    //   use: {
+    //     ...devices['Desktop Chrome'],
+    //     channel: 'chrome'
+    //   },
     // },
   ],
 
@@ -78,4 +85,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
